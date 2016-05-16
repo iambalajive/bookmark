@@ -1,0 +1,15 @@
+<div class="col-md-5">
+    <form name="CreateFolderForm">
+        <div class="form-group">
+            <label for="folderName">Create a new Folder</label>
+
+            <input id-"folderName" type="text" placeholder="Folder Name" class="form-control" ng-model="vm.folderName"
+            required
+            maxlength="20">
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="vm.createFolder()"
+                ng-disabled="!CreateFolderForm.$valid">Save
+        </button>
+        <button type="reset" class="btn btn-cancel" ng-click="vm.defaultRedirect()">Close</button>
+    </form>
+</div>

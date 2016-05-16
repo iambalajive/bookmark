@@ -1,0 +1,29 @@
+<div class="col-md-5">
+    <form name="AddBookMarkForm">
+        <div class="form-group">
+            <label for="folderName">Create a new Bookmark</label>
+            <input type="text" name="title" placeholder="Title" maxlength="20" required class="form-control"
+                   ng-model="vm.newBookMark.title">
+            <span class="text-warning"
+                  ng-show="!AddBookMarkForm.title.$valid">Please don't forget to give a title</span>
+
+        </div>
+        <div class="form-group">
+            <input type="url" name="bookmarkUrl" placeholder="Url eg:http://" class="form-control" required=""
+                   ng-model="vm.newBookMark.url">
+            <span class="text-warning" ng-show="!AddBookMarkForm.bookmarkUrl.$valid">Please enter a valid Url </span>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <select name="foldername" ng-model="vm.folder" class="form-control" required=""
+                        ng-options="folder as folder.folderName  for folder in vm.folders" ng-selected="selected">
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" ng-click="vm.createBookMark()"
+                ng-disabled="!AddBookMarkForm.$valid">Save
+        </button>
+        <button type="reset" class="btn btn-cancel" ng-click="vm.defaultRedirect()">Close</button>
+    </form>
+</div>

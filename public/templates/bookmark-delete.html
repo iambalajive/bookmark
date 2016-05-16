@@ -1,0 +1,15 @@
+<div class="col-md-5">
+    <form name="DeleteBookMark">
+        <div class="form-group">
+            <label for="bookmark">Choose your bookmark .. Delete it ..</label>
+
+            <select id="bookmark" ng-model="vm.newBookMark" class="form-control" required=""
+                    ng-options="bookmark as bookmark.title  for bookmark in vm.bookmarks track by bookmark._id"></select>
+        </div>
+
+        <button type="submit" class="btn btn-success" ng-click="vm.deleteBookMark()"
+                ng-disabled="!DeleteBookMark.$valid">Delete
+        </button>
+        <button type="reset" class="btn btn-cancel" ng-click="vm.defaultRedirect()">Close</button>
+    </form>
+</div>

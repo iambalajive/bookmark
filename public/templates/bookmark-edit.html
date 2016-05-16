@@ -1,0 +1,29 @@
+<div class="col-md-5">
+    <form name="CopyBookMarkForm">
+        <div class="form-group">
+            <label for="bookmark">
+                <label for="bookmark">Bookmark </label>
+                <select id="bookmark" ng-model="vm.newBookMark" class="form-control" required
+                        ng-options="bookmark as bookmark.title  for bookmark in vm.bookmarks track by bookmark._id"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="sourcefolder">From</label>
+
+            <input id="sourcefolder" type="text" ng-model="vm.newBookMark.folderName" required class="form-control"
+                   ng-disabled="true">
+        </div>
+
+        <div class="form-group">
+            <label for="destinationFolder">To</label>
+
+            <select required id="destinationFolder" ng-model="vm.folder" class="form-control" required
+                    ng-options="folder as folder.folderName  for folder in vm.folders"></select><br/>
+        </div>
+
+        <button type="submit" class="btn btn-success" ng-disabled="!CopyBookMarkForm.$valid"
+                ng-click="vm.moveBookMark()">Save
+        </button>
+        <button type="reset" class="btn btn-cancel" ng-click="vm.defaultRedirect()">Close</button>
+    </form>
+</div>
